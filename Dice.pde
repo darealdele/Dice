@@ -18,7 +18,6 @@ int [] dieTotals;
          dice2.roll();
          dice2.show();
          dieTotals[dice2.pips - 1] += 1;
-         print(dieTotals[1] + " ");
       }
     }
     textSize(15);
