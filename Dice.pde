@@ -1,10 +1,13 @@
-void setup()
-{
-	size(500,500);
-	noLoop();
-}
-void draw()
-{
+int total = 0;
+int [] dieTotals;
+  void setup()
+  {
+      background(255);
+      size(500,500);
+      noLoop();
+  }
+  void draw()
+  {
     int [] dieTotals = {0,0,0,0,0,0};
     fill(255);
     rect(0,400,500,100);
@@ -15,6 +18,7 @@ void draw()
          dice2.roll();
          dice2.show();
          dieTotals[dice2.pips - 1] += 1;
+         print(dieTotals[1] + " ");
       }
     }
     textSize(15);
@@ -42,12 +46,12 @@ void draw()
     fill(0);
     text("Total: " + total,7.5,465);
     strokeWeight(1);
-}
-void mousePressed()
-{
-	redraw();
-}
-class Die //models one single dice cube
+  }
+  void mousePressed()
+  {
+      redraw();
+  }
+  class Die //models one single dice cube
   {
       //member variable declarations here
       int myX = 0;
@@ -103,3 +107,20 @@ class Die //models one single dice cube
         }
       }
   }
+  
+  /*
+          beginShape();
+        curveVertex(diceX+20,diceY+50);
+        curveVertex(diceX+40,diceY+50);
+        curveVertex(diceX+45,diceY+55);
+        curveVertex(diceX+45,diceY+75);
+        curveVertex(diceX+40,diceY+80);
+        curveVertex(diceX+20,diceY+80);
+        curveVertex(diceX+15,diceY+75);
+        curveVertex(diceX+15,diceY+53);
+        curveVertex(diceX+20,diceY+50);  
+        curveVertex(diceX+20,diceY+50);  
+        curveVertex(diceX+40,diceY+50);  
+        curveVertex(diceX+40,diceY+50);  
+        endShape();
+*/
